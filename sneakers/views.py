@@ -23,6 +23,21 @@ def get_sneakers(request):
     }
     response = requests.request("GET", url, headers=headers, params=querystring)
 
-    #print(response.text)
+    # print(response.text)
     #return JsonResponse(response)
     return HttpResponse(response)
+
+def get_brands(request):
+    url = "https://v1-sneakers.p.rapidapi.com/v1/sneakers"
+
+    querystring = {"limit":"10","brand":request}
+
+    headers = {
+        "X-RapidAPI-Host": "v1-sneakers.p.rapidapi.com",
+        "X-RapidAPI-Key": "a9c9774493mshf4df80a9e398926p1ffb86jsn33ae009aa91c"
+    }
+
+    response = requests.request("GET", url, headers=headers, params=querystring)
+
+    print(response.text)
+    
