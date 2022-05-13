@@ -54,6 +54,8 @@ MIDDLEWARE = [
 
 CORS_ORIGIN_ALLOW_ALL = True
 
+CSRF_TRUSTED_ORIGINS = ['https://*.mydomain.com','https://*.127.0.0.1','http://localhost:4200']
+
 ROOT_URLCONF = 'sneakify_backend.urls'
 
 TEMPLATES = [
@@ -80,14 +82,14 @@ WSGI_APPLICATION = 'sneakify_backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'NAME':'sneakify_users',
-        'USER': 'grey',
+        'NAME':'sneakify_data',
+        'USER': 'postgres',
         'PASSWORD': 'Vermilion9#',
         'HOST': 'localhost',   
-        'PORT': '3306',
-        'OPTIONS': {'ssl': False},
+        'PORT': '5100',
+        
     }
 }
 
