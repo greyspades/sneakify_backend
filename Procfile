@@ -1,1 +1,1 @@
-"web: gunicorn sneakify_backend.wsgi" 
+web: gunicorn sneakify_backend.wsgi
